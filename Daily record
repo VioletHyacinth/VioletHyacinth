@@ -1,0 +1,90 @@
+1.the most easily calculate
+
+#define _CRT_SECURE_NO_WARNINGS 1
+#include<stdio.h>
+#include<string.h>
+
+int main()
+{
+	int result = 0;
+	int a = 0;
+	int b = 0;
+	printf("乘法运算\n");
+	scanf("%d%d", &a, &b);
+	result = (a * b);
+	printf("结果是%d\n", result);
+	return 0;
+}
+
+It took me a lot of time to get used to symbols at first
+
+
+
+2.the most easily judgment statement
+int main()
+{
+	char yes = 0;
+		char no = 0;
+	int answer = 0;
+	printf("are you sad?(yes/no)>:");
+	scanf("%d", &answer);
+	if (answer = "yes")
+		printf("休息一会然后好好学习\n");
+	else
+		printf(" 好好学习\n");
+	return 0;
+}
+
+At first, "yes" was defined, but I don't know why it's always the command under "else" that goes in and out.
+
+#define _CRT_SECURE_NO_WARNINGS 1
+#include<stdio.h>
+#include<string.h>
+
+
+char arr1[2] = { 'yes','no' };
+int main()
+{
+	int answer = 0;
+	printf("are you sad?(yes/no)>:");
+	scanf("%c", &answer);
+	if (answer = arr1[0])
+		printf("休息一会然后好好学习\n");
+	else
+		printf(" 好好学习\n");
+	return 0;
+}
+
+I've been thinking about it for a long time, and I still don't understand, but I've come up with the idea of using arrays
+
+3.First attempt at use “struct”
+
+#define _CRT_SECURE_NO_WARNINGS 1
+#include<stdio.h>
+#include<string.h>
+
+struct Human  {
+	char name[20];
+	short age;
+	char character[20];
+	char Bg[22];//background
+};//创建结构体设置想输入的变量
+int main()
+{
+	struct Human man1 = {
+		"亚当",
+		18,
+		"孤独，无聊",
+		"世界诞生的第一个男人\0"
+     };//结构体编辑结束
+	struct Human* address = &man1;//设置指针变量记录位置
+	strcpy(man1.name, "亚伦");//名称为数组名，本质上是地址
+	man1.age = 2000;//本质为变量可直接赋值
+	
+	printf("世界上第一个男人是%s\n", address->name);
+	printf("现在的年龄是：%d\n", address->age);
+	printf("性格：%s\n", address->character);
+	printf("背景：%s\n", address->Bg);
+	return 0;
+}
+
