@@ -1,0 +1,127 @@
+1.a little exercise in odd numbers
+
+#define _CRT_SECURE_NO_WARNINGS 1
+#include<stdio.h>
+#include<string.h>
+
+extern int X;
+int main()
+{
+	int a = 0;//范围a
+	int b = 0;//范围b
+	int i = 0;
+	int sum = 0;
+	
+	printf("请选择范围");
+	scanf(" %d%d",&a,&b);
+	while (a<b)
+	{
+		while(i>=a && i<=b)
+		{
+			int X(i);
+			if(i==1)
+				printf("i")
+		}
+	}
+}
+
+2.compute factorials
+
+#define _CRT_SECURE_NO_WARNINGS 1
+#include<stdio.h>
+#include<string.h>
+
+int main()
+{
+	int n = 0;
+	int m = 0;
+	int sum = 1;
+	scanf("%d", &n);
+	for (m = 1;m<=n; m++)
+	{
+		sum = sum * m;
+	}
+	printf("%d\n", sum );
+	return 0;
+}
+
+3.The basic search method
+
+#define _CRT_SECURE_NO_WARNINGS 1
+#include<stdio.h>
+#include<string.h>
+
+int main()
+{
+	int i = 0;
+	char arr1[] = { 1,2,4,7,9,11,14,15,18,20 };
+	int left = 0;
+	int right = strlen(arr1) - 1;
+	int mid = (right + left) / 2;
+	printf("请输入想查找的数字：%d\n", &i);
+	while (left <= right)
+	{
+		if (arr1[mid] > arr1[i])
+		{
+			right = mid - 1;
+		}
+		else if (arr1[mid] < arr1[i])
+		{
+			left = mid + 1;
+		}
+		else 
+		{
+			printf("找到了，目标元素的下标为：%d", i);
+			break;
+		}
+	}
+	if (left > right);
+	printf("未找到目标元素");
+}
+
+4.My first feature-rich project
+
+#define _CRT_SECURE_NO_WARNINGS 1
+#include<stdio.h>
+#define X "已拨款"
+#define Y "未拨款"
+
+int main()
+{
+	char s = 0;//status1
+	char a = 0;//status2
+	int c = 0;//报账信息文件
+	printf("请输入文件编号（1-6）\t");
+	scanf("%d", &c);
+	switch (c)
+	{
+	default:
+		printf("该编号不存在");
+		break;
+	case 1:
+	case 2:
+	case 3:
+		printf("已审核");
+		break;
+	case 4:
+	case 5:
+	case 6:
+		printf("状态:未审核\n是否需要审核文件并修改状态（是/否）");
+		scanf("%s", &s);
+		if (char s = '是')
+		{
+			printf("请选择想要修改的状态（已拨款/未拨款）");
+			scanf("%s", &a);
+			if (char a = 'X')
+				printf("修改成功\n当前状态：已拨款");
+			else if (char a = 'Y')
+				printf("修改成功\n当前状态：未拨款");
+			else
+				printf("输入错误");
+		}
+		else if (char a = '否')
+			printf("感谢使用");
+		else
+			printf("输入错误");
+	}
+	return 0;
