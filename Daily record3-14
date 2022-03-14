@@ -1,0 +1,53 @@
+1.
+#define _CRT_SECURE_NO_WARNINGS 1
+#include<stdio.h>
+#include<string.h>
+
+int main()
+{
+	int i = 0;
+	int a;
+	char sum[22];
+	char ret[20];
+	printf("请输入字符串：%s\n");
+		scanf("%s", sum);
+		int sz=strlen(sum);
+		for (i = 0; i < sz; i++)
+		{
+			if (sum[i] = '%ld')
+			{
+				remove(sum[i]);
+			}
+		}
+		printf("%s\n", sum);
+		return 0;
+}
+
+
+2.
+#define _CRT_SECURE_NO_WARNINGS 1
+#include<stdio.h>
+#include<string.h>
+
+int main()
+{
+	int i = 0;
+	char arr1[20];
+	int arr2[22] = "#####################";
+	int sz = sizeof(arr1) / sizeof(arr1[0]);
+	printf("请输入目标文本：\n");
+	scanf("%s\n", &arr1 );
+	for (i = 0; i < sz; i++)
+	{
+		if (arr1[i] = '%d')
+		{
+			strcpy(arr2, arr1[i]);
+		}
+		else
+			remove(arr1[i]);
+	}
+	printf("提取出的文字为：%s\n", arr2);
+	return 0;
+}
+
+default
