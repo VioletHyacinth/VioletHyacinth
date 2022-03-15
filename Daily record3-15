@@ -91,3 +91,32 @@ int main()
 	printf("输出结果为：%d\n", sum);
 	return 0;
 }
+
+4.Fibonacci number
+
+#define _CRT_SECURE_NO_WARNINGS 1
+#include<stdio.h>
+#include<string.h>
+
+int Fib(int i)
+{
+	int sum = 0;
+	if (i > 2)
+	{
+		sum = Fib(i - 1) + Fib(i - 2);
+		return sum;
+	}
+	else
+		return 1;
+}
+
+int main()
+{
+	int ret = 0;
+	int n = 0;
+	printf("请输入:\n");
+	scanf("%d\0", &n);
+	ret = Fib(n);
+	printf("第%d个斐波那契数为：%d", n, ret);
+	return 0;
+}
