@@ -62,3 +62,32 @@ int main()
 	else
 		printf("%d不是闰年", year);
 }
+
+
+3.factorial multiplication
+#define _CRT_SECURE_NO_WARNINGS 1
+#include<stdio.h>
+#include<string.h>
+
+int Fac1(int i)
+{
+	int ret = 0;
+	if (i > 0)
+	{
+		ret = i * Fac1(i-1);
+		return ret;
+	}
+	else
+		return 1;
+}
+
+int main()
+{
+	int n ;
+	int sum = 0;
+	printf("请输入数字:");
+	scanf("%d", &n);
+	sum = Fac1(n);
+	printf("输出结果为：%d\n", sum);
+	return 0;
+}
