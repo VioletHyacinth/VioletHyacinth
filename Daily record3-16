@@ -40,12 +40,34 @@ int main()
 
 2.
 
+#define _CRT_SECURE_NO_WARNINGS 1
+#include<stdio.h>
+#include<string.h>
+#define row 3
+#define col 3
+
+void boardsetting(int board[row][col],int row,int col)
+//1   菜单
+//2   棋盘
+//3   玩家指令
+//4   电脑指令
+//5   判断胜负
+
 #include"game.h"
 
 void gameboard()
 {
 	char board[row][col] = { 0 };
 
+}
+
+#include"game.h"
+
+void gameboard()
+{
+	char board[row][col] = { 0 };
+	boardsetting(board, row, col);
+	displayboard(board, row, col);
 }
 
 //玩家行动
