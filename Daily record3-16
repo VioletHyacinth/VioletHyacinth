@@ -1,0 +1,76 @@
+1.
+
+#define _CRT_SECURE_NO_WARNINGS 1
+#include<stdio.h>
+#include<string.h>
+
+ void bubble(int* arr, int sz)
+{
+	int j = 0;
+	for (j = 0; j < sz - 1; j++)
+	{
+		int i = 0;
+		int flag = 1;
+		for (i = 0; i < sz-1-i; i++)
+			if (arr[i] > arr[i + 1])
+			{
+				int x = arr[i + 1];
+				arr[i] = arr[i + 1];
+				arr[i + 1] = x;
+				flag = 0;
+			}
+		if (flag == 1)
+		{
+			break;
+		}
+	}
+}
+
+int main()
+{
+	int i = 0;
+	int arr1[] = {10,9,8,7,6,5,4,3,2,1};
+	int sz = sizeof(arr1) / sizeof(arr1[0]);
+	bubble(arr1,sz);
+	 for(i=0;i<sz;i++)
+	    printf("重新排序结果为：%d ", arr1);
+	 return 0;
+}
+
+
+2.
+
+#include"game.h"
+
+void gameboard()
+{
+	char board[row][col] = { 0 };
+
+}
+
+//玩家行动
+void player(char board[row][col], int row, int col)
+{
+	int x = 0;
+	int y = 0;
+	printf("玩家回合");
+	printf("请输入坐标以下棋:>");
+	scanf("%d%d", &x, &y);
+	while (1)
+	{
+		printf("请输入坐标以下棋:>");
+		scanf("%d%d", &x, &y);
+		if (x <= row && x >= 1 && y >= 1 && y <= col)//判断正确坐标
+		{
+			if (board[x][y] == ' ')
+			{
+				board[x][y] = '+';//占用坐标
+			}
+			else
+				printf("该坐标已被占用，请重新选择");
+
+		}
+		else
+			printf("错误坐标，请重新输入");
+	}
+}
